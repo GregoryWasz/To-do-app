@@ -1,13 +1,13 @@
-package com.paw2.todoapp;
+package com.paw2.ToDoApp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class TodoappApplication {
+public class ToDoAppApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(TodoappApplication.class, args);
+		SpringApplication.run(ToDoAppApplication.class, args);
 	}
 
 }

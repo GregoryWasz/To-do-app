@@ -32,3 +32,4 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
+/todoapp/src/main/resources/application.properties

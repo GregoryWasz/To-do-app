@@ -31,4 +31,3 @@ build/
 
 ### VS Code ###
 .vscode/
-/todoapp/src/main/resources/application.properties

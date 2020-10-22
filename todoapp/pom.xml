@@ -9,13 +9,13 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.paw2</groupId>
-	<artifactId>todoapp</artifactId>
+	<artifactId>ToDoApp</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>todoapp</name>
-	<description>First CRUD in spring </description>
+	<name>ToDoApp</name>
+	<description>First app in spring boot</description>
 
 	<properties>
-		<java.version>15</java.version>
+		<java.version>11</java.version>
 	</properties>
 
 	<dependencies>
@@ -38,6 +38,11 @@
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
