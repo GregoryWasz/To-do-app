@@ -4,16 +4,17 @@ import FooterComponent from './compontens/FooterComponent';
 import HeaderComponent from './compontens/HeaderComponent';
 import ListTaskComponent from './compontens/ListTaskComponent';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import CreateTaskComponent from './compontens/CreateTaskComponent';
 function App() {
   return (
     <div>
       <Router>
           <HeaderComponent />
           <div className="container">
-            <Switch> https://localhost:3000/
-              <Route path="/" component={ListTaskComponent}></Route>
+            <Switch> 
+              <Route path="/" exact component={ListTaskComponent}></Route>
               <Route path="/tasks" component={ListTaskComponent}></Route>
-              <ListTaskComponent />
+              <Route path="/create-task" component={CreateTaskComponent}></Route>
             </Switch>
           </div>
           <FooterComponent />

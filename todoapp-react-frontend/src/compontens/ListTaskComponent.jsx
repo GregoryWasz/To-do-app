@@ -8,6 +8,11 @@ class ListTaskComponent extends Component {
         this.state = {
             tasks: []
         }
+        this.createTask = this.createTask.bind(this);
+    }
+
+    createTask(){
+        this.props.history.push("/create-task");
     }
 
     componentDidMount(){
@@ -15,10 +20,14 @@ class ListTaskComponent extends Component {
             this.setState({ tasks: res.data});
         });
     }
+
     render() {
         return (
             <div>
                 <h2 className="text-center">Task list</h2>
+                <div className="row">
+                    <button className="btn btn-primary" onClick={this.createTask}>Add task</button>
+                </div>
                 <div className="row">
                     <table className="table table-striped table-bordered">
                         <thead>
