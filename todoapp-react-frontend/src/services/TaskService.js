@@ -10,6 +10,14 @@ class TaskService {
     createTask(task){
         return axios.post(TASK_API_BASE_URL, task)
     }
+
+    getTaskById(taskId){
+        return axios.get(TASK_API_BASE_URL + '/' + taskId)
+    }
+
+    updateTask(task, taskId){
+        return axios.put(TASK_API_BASE_URL + '/' + taskId, task)
+    }
 }
 
 export default new TaskService()

@@ -9,8 +9,12 @@ class ListTaskComponent extends Component {
             tasks: []
         }
         this.createTask = this.createTask.bind(this);
+        this.updateTask = this.updateTask.bind(this);
     }
 
+    updateTask(id){
+        this.props.history.push(`/update-task/${id}`);
+    }
     createTask(){
         this.props.history.push("/create-task");
     }
@@ -46,6 +50,7 @@ class ListTaskComponent extends Component {
                                         <td>{task.text}</td>
                                         <td>{task.note}</td>
                                         <td>{task.done}</td>
+                                        <td><button className="btn btn-primary" onClick={() => this.updateTask(task.id)}>Modify</button></td>
                                     </tr>
                                 )
                             }
