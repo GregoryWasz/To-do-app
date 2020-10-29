@@ -18,6 +18,10 @@ class TaskService {
     updateTask(task, taskId){
         return axios.put(TASK_API_BASE_URL + '/' + taskId, task)
     }
+
+    deleteTask(taskId){
+        return axios.delete(TASK_API_BASE_URL + '/' + taskId)
+    }
 }
 
 export default new TaskService()

@@ -3,8 +3,10 @@ import React, { Component } from 'react';
 class HeaderComponent extends Component {
     render() {
         return (
-            <nav className="navbar navbar-light bg-light">
-                <a className="navbar-brand" href="/">Navbar</a>
+            <nav className="navbar navbar-dark bg-dark">
+                <span class="navbar-text">
+                    Hello
+                </span>
             </nav>
         );
     }

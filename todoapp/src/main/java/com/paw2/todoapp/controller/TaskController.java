@@ -8,7 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
@@ -47,5 +49,16 @@ public class TaskController {
 
         Task updatedTask = taskRepository.save(task);
         return ResponseEntity.ok(updatedTask);
+    }
+
+    @DeleteMapping("/tasks/{id}")
+    public ResponseEntity<Map<String, Boolean>> deleteTask(@PathVariable Long id){
+        Task task = taskRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Task not exist with id: " + id));
+
+        taskRepository.delete(task);
+        Map <String, Boolean> res = new HashMap<>();
+        res.put("deleted", Boolean.TRUE);
+        return ResponseEntity.ok(res);
     }
 }

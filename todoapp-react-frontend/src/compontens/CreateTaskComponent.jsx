@@ -27,7 +27,7 @@ class CreateTaskComponent extends Component {
     saveTask = (e) => {
         e.preventDefault();
         let task = {text: this.state.text, note: this.state.note, done: this.state.done};
-
+        
         TaskService.createTask(task).then(res => {
             this.props.history.push('/tasks');
         });
