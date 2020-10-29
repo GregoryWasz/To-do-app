@@ -9,7 +9,7 @@ class UpdateTaskComponent extends Component {
             id: this.props.match.params.id,
             text:'',
             note:'',
-            done: false,
+            done: '',
         }
 
         this.changeTextHandler = this.changeTextHandler.bind(this);
@@ -49,8 +49,8 @@ class UpdateTaskComponent extends Component {
 
     render() {
         return (
-            <div className="container">
-                <div className="Row">
+            <div className="container" style={{marginTop: "30px"}}>
+                <div className="Row" >
                     <div className="card col-md-6 offset-md-3 offset-md-3">
                         <h3 className="text-center">Update task</h3>
                         <div className="card-body">

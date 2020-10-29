@@ -40,7 +40,7 @@ class CreateTaskComponent extends Component {
     render() {
         return (
             <div className="container">
-                <div className="Row">
+                <div className="Row" style={{marginTop: "30px"}} >
                     <div className="card col-md-6 offset-md-3 offset-md-3">
                         <h3 className="text-center">Add Task</h3>
                         <div className="card-body">

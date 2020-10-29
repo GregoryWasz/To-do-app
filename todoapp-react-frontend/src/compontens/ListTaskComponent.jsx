@@ -13,12 +13,8 @@ class ListTaskComponent extends Component {
         this.updateTask = this.updateTask.bind(this);
         this.deleteTask = this.deleteTask.bind(this);
         this.viewTask = this.viewTask.bind(this);
-        this.doneTask = this.doneTask.bind(this);
     }
 
-    doneTask(id){
-        this.props.history.push(`/done-task/${id}`)
-    }
     viewTask(id){
         this.props.history.push(`/view-task/${id}`)
     }
@@ -56,7 +52,7 @@ class ListTaskComponent extends Component {
                             <tr>
                                 <th>Task text</th>
                                 <th>Task note</th>
-                                <th>Task done</th>
+                                <th>Task status</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -67,11 +63,11 @@ class ListTaskComponent extends Component {
                                     <tr key={task.id}>
                                         <td>{task.text}</td>
                                         <td>{task.note}</td>
-                                        <td>{String(task.done)}</td>
+                                        <td>{task.id ? 'Undone' : 'Done'}</td>
                                         <td>
-                                            <button className="btn btn-primary" onClick={() => this.updateTask(task.id)}>Update</button>
-                                            <button className="btn btn-warning" style={{marginLeft: "10px"}} onClick={() => this.viewTask(task.id)}>View</button>
-                                            <button className="btn btn-danger" style={{marginLeft: "10px"}} onClick={() => this.deleteTask(task.id)}>Delete</button>
+                                            <button className="btn btn-primary" style={{margin: "3px"}} onClick={() => this.updateTask(task.id)}>Update</button>
+                                            <button className="btn btn-warning" style={{margin: "3px"}} onClick={() => this.viewTask(task.id)}>View</button>
+                                            <button className="btn btn-danger" style={{margin: "3px"}} onClick={() => this.deleteTask(task.id)}>Delete</button>
                                         </td>
                                     </tr>
                                 )
